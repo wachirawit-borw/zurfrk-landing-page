@@ -1,2 +1,18 @@
-# zurfrk-landing-page
-Landing page for ZURFRK – a fictional men's shoe brand, built for portfolio and frontend practice.
+# รวมโปรเจกต์พัฒนาเว็บ (Frontend Projects)
+
+คลังสะสมผลงานและแบบฝึกหัดจากการเรียนรู้และพัฒนาทักษะด้าน Frontend Development  
+โปรเจกต์แต่ละอันใน repo นี้มีวัตถุประสงค์แตกต่างกัน เช่น:
+
+- การฝึกออกแบบ UI ด้วย Figma
+- การสร้าง Layout ที่ Responsive ด้วย TailwindCSS
+- การพัฒนา React Component
+- การวางโครงสร้างโปรเจกต์จริง พร้อม Deploy
+- การเตรียมโปรเจกต์เพื่อใช้งานจริงหรือแนบใน Portfolio / Resume
+
+---
+
+## 🧭 เป้าหมายของ Repo นี้
+
+- ใช้เก็บสะสมผลงานแบบที่พัฒนาเอง
+- ทบทวนพัฒนาการของตนเอง
+  > จัดทำขึ้นเพื่อแสดงความสามารถอย่างต่อเนื่อง
