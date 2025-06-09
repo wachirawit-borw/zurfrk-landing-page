@@ -19,9 +19,9 @@
    - รูปภาพใหญ่ของรองเท้าหลัก (หรือว่างไว้ก่อน)
 3. **Features Section**
    - กล่อง 3 ใบ
-     > 🪶 เบาแต่ทน
-     > ⚡ ส่งด่วน
-     > 🧍 ดีไซน์เรียบหรู
+     - 🪶 เบาแต่ทน
+     - ⚡ ส่งด่วน
+     - 🧍 ดีไซน์เรียบหรู
    - ใช้ icon + title + short text 4.
 4. **Product Preview Section**
    - สินค้าตัวอย่าง 2–3 คู่
@@ -36,7 +36,6 @@
 7. **Footer**
    - Copyright ©
    - Social Media icons (Instagram, Facebook, etc.)
-   -
 
 ---
 
