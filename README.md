@@ -1,19 +1,19 @@
-# รวมโปรเจกต์พัฒนาเว็บ (Frontend & Backend Projects)
+# Web Development Project Collection (Frontend & Backend Projects)
 
-คลังสะสมผลงานและแบบฝึกหัดจากการเรียนรู้และพัฒนาทักษะด้าน Frontend Development  
-โปรเจกต์แต่ละอันใน repo นี้มีวัตถุประสงค์แตกต่างกัน เช่น:
+This repository is a collection of practice projects created during my learning journey in web development, especially focusing on frontend development.  
+Each project in this repo serves a different purpose, such as:
 
-- การฝึกออกแบบ UI ด้วย Figma
-- การสร้าง Layout ที่ Responsive ด้วย TailwindCSS
-- การพัฒนา React Component
-- การวางโครงสร้างโปรเจกต์จริง พร้อม Deploy
-- การเตรียมโปรเจกต์เพื่อใช้งานจริงหรือแนบใน Portfolio / Resume
+- Practicing UI design with Figma  
+- Creating responsive layouts using TailwindCSS  
+- Developing reusable React components  
+- Structuring real-world projects with proper deployment  
+- Preparing production-ready portfolio projects for job applications or resumes
 
 ---
 
-## 🧭 เป้าหมายของ Repo นี้
+## 🧭 Purpose of This Repository
 
-- ใช้เก็บสะสมผลงานแบบที่พัฒนาเอง
-- ทบทวนพัฒนาการของตนเอง
+- To keep track of self-developed learning and practice projects  
+- To reflect on and improve personal progress over time
 
-📖 [Read this in Thai → คลิกที่นี่](./README.EN.md)
+📖 [Read this in Thai → คลิกที่นี่](./Languages/README.TH.md)
