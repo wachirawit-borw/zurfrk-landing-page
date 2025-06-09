@@ -1,4 +1,4 @@
-# ✅ เป้าหมายของ Wireframe Mobile Layout
+# ✅ เป้าหมายของ Wireframe desktop Layout
 
 - โฟกัส "เนื้อหา" และ "โครงสร้าง" ไม่เน้นดีไซน์
 - เรียงจากบนลงล่าง
