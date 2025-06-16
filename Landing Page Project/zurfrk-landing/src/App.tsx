@@ -20,7 +20,7 @@ export default function App() {
         </header>
       </section>
       <section
-        className="relative w-full h-[850px] bg-[url('/Picture/Hero-image.jpg')] bg-cover bg-center bg-no-repeat"
+        className="relative w-full h-[850px] bg-[url('/picture/Hero-image.jpg')] bg-cover bg-center bg-no-repeat"
       >
         {/* overlay ปรับความฟุ้งและโทนสีแบบ Figma */}
         <div className="absolute inset-0 bg-[#D9B89C]/80 mix-blend-multiply z-10"></div>
@@ -89,7 +89,7 @@ export default function App() {
           {/* รูปภาพฝั่งขวา */}
           <div className="px-4">
             <img
-              src="/Picture/About-image.jpg"
+              src="/picture/About-image.jpg"
               alt="About ZURFRK"
               className="rounded shadow-md w-full object-cover"
             />
@@ -101,7 +101,7 @@ export default function App() {
         className="relative w-full h-[500px] bg-black overflow-hidden flex items-center justify-center text-white"
       >
         <img
-          src="/Picture/Subscribe.jpg"
+          src="/picture/Subscribe.jpg"
           alt="Subscribe Background"
           className="absolute inset-0 w-full h-full object-cover z-0"
         />
