@@ -22,13 +22,12 @@ body {
 a {
   font-weight: 800;
   text-decoration: none;
-  color: #4979fb;
+  color: #dfd2d2;
   transition: color 0.2s ease;
 }
 
 a:hover {
-  color: #a5b7e8; /* Hover เป็นน้ำเงินกรม */
-  -webkit-text-stroke: 0.5px #8ca5ea; /* ทำให้ตัวอักษรคมขึ้นเล็กน้อย */
+  color: #4465c1; /* Hover เป็นน้ำเงินกรม */
 }
 
 /* ───── 🖱️ Button (กรณีใช้ tag <button> ตรง ๆ ไม่ใช้ className) ───── */
