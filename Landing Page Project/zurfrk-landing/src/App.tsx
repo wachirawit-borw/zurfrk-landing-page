@@ -69,6 +69,24 @@ export default function App() {
           </div>
         </div>
       </section>
+      <section className="bg-[#e5c4a5] py-16">
+        <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="overflow-hidden rounded-xl shadow-md">
+            <img
+              src="/picture/shoes-image1.jpg"
+              alt="Shoe 1"
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <div className="overflow-hidden rounded-xl shadow-md">
+            <img
+              src="/picture/shoes-image2.jpg"
+              alt="Shoe 2"
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+      </section>
 
       <section id="about" className="bg-[#D9B89C] py-16 px-6 text-black">
         <h2 className="text-2xl font-bold text-center mb-10 drop-shadow">About</h2>
@@ -126,63 +144,65 @@ export default function App() {
           </form>
         </div>
       </section>
-      <footer className="bg-[#D9B89C] text-black px-6 py-16">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+      <section id="Explore">
+        <footer className="bg-[#D9B89C] text-black px-6 py-16">
+          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
 
-          {/* Logo + Social Icons */}
-          <div>
-            <h2 className="text-xl font-bold mb-4">ZURFRK</h2>
-            <div className="flex gap-4 text-black text-xl">
-              <i className="fab fa-x-twitter hover:text-blue-600 transition"></i>
-              <i className="fab fa-instagram hover:text-pink-500 transition"></i>
-              <i className="fab fa-youtube hover:text-red-600 transition"></i>
-              <i className="fab fa-linkedin hover:text-blue-700 transition"></i>
+            {/* Logo + Social Icons */}
+            <div>
+              <h2 className="text-xl font-bold mb-4">ZURFRK</h2>
+              <div className="flex gap-4 text-black text-xl">
+                <i className="fab fa-x-twitter hover:text-blue-600 transition"></i>
+                <i className="fab fa-instagram hover:text-pink-500 transition"></i>
+                <i className="fab fa-youtube hover:text-red-600 transition"></i>
+                <i className="fab fa-linkedin hover:text-blue-700 transition"></i>
+              </div>
             </div>
-          </div>
 
-          {/* Use Cases */}
-          <div>
-            <h3 className="font-bold mb-3">Use cases</h3>
-            <ul className="space-y-1 text-sm">
-              <li>UI design</li>
-              <li>UX design</li>
-              <li>Wireframing</li>
-              <li>Diagramming</li>
-              <li>Brainstorming</li>
-              <li>Online whiteboard</li>
-              <li>Team collaboration</li>
-            </ul>
-          </div>
+            {/* Use Cases */}
+            <div>
+              <h3 className="font-bold mb-3">Use cases</h3>
+              <ul className="space-y-1 text-sm">
+                <li>UI design</li>
+                <li>UX design</li>
+                <li>Wireframing</li>
+                <li>Diagramming</li>
+                <li>Brainstorming</li>
+                <li>Online whiteboard</li>
+                <li>Team collaboration</li>
+              </ul>
+            </div>
 
-          {/* Category */}
-          <div>
-            <h3 className="font-bold mb-3">Category</h3>
-            <ul className="space-y-1 text-sm">
-              <li>Men’s Shoes</li>
-              <li>New Arrivals</li>
-              <li>Casual Collection</li>
-              <li>Limited Edition</li>
-              <li>Size & Fit</li>
-              <li>Lookbook</li>
-            </ul>
-          </div>
+            {/* Category */}
+            <div>
+              <h3 className="font-bold mb-3">Category</h3>
+              <ul className="space-y-1 text-sm">
+                <li>Men’s Shoes</li>
+                <li>New Arrivals</li>
+                <li>Casual Collection</li>
+                <li>Limited Edition</li>
+                <li>Size & Fit</li>
+                <li>Lookbook</li>
+              </ul>
+            </div>
 
-          {/* Explore */}
-          <div>
-            <h3 className="font-bold mb-3">Explore</h3>
-            <ul className="space-y-1 text-sm">
-              <li>Design</li>
-              <li>Prototyping</li>
-              <li>Development features</li>
-              <li>Design systems</li>
-              <li>Collaboration features</li>
-              <li>Design process</li>
-              <li>FigJam</li>
-            </ul>
-          </div>
+            {/* Explore */}
+            <div>
+              <h3 className="font-bold mb-3">Explore</h3>
+              <ul className="space-y-1 text-sm">
+                <li>Design</li>
+                <li>Prototyping</li>
+                <li>Development features</li>
+                <li>Design systems</li>
+                <li>Collaboration features</li>
+                <li>Design process</li>
+                <li>FigJam</li>
+              </ul>
+            </div>
 
-        </div>
-      </footer>
+          </div>
+        </footer>
+      </section>
     </>
   );
 }
