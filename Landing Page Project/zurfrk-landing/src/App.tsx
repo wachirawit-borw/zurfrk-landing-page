@@ -101,7 +101,7 @@ export default function App() {
         className="relative w-full h-[500px] bg-black overflow-hidden flex items-center justify-center text-white"
       >
         <img
-          src="/picture/Subscribe.jpg"
+          src="/Picture/Subscribe.jpg"
           alt="Subscribe Background"
           className="absolute inset-0 w-full h-full object-cover z-0"
         />
