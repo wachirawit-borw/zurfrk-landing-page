@@ -20,7 +20,7 @@ export default function App() {
         </header>
       </section>
       <section
-        className="relative w-full h-[850px] bg-[url('/picture/Hero-image.jpg')] bg-cover bg-center bg-no-repeat"
+        className="relative w-full h-[850px] bg-[url('/picture/hero-image.jpg')] bg-cover bg-center bg-no-repeat"
       >
         {/* overlay ปรับความฟุ้งและโทนสีแบบ Figma */}
         <div className="absolute inset-0 bg-[#D9B89C]/80 mix-blend-multiply z-10"></div>
