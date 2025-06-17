@@ -8,7 +8,7 @@ export default function App() {
       {/* Header Section */}
       <section id="header">
         <header className="w-full px-4 sm:px-6 py-4 flex justify-between items-center bg-[#b60b0b] shadow-md">
-          <h1 className="text-3xl font-extrabold text-[#1e3a8a] drop-shadow-sm tracking-wide">
+          <h1 className="text-3xl font-extrabold text-[#dadbdb] drop-shadow-sm tracking-wide">
             ZURFRK
           </h1>
 
@@ -18,8 +18,8 @@ export default function App() {
             <a href="#features" className="hover:text-black transition">Features</a>
             <a href="#about" className="hover:text-black transition">Contact</a>
             <a href="#Explore" className="hover:text-black transition">Explore</a>
-            <button className="bg-white text-black px-4 py-1 rounded-full shadow hover:bg-gray-100 transition">Sign in</button>
-            <button className="bg-black text-white px-4 py-1 rounded-full shadow hover:opacity-90 transition">Register</button>
+            <button aria-label="Sign in" className="bg-white text-black px-4 py-1 rounded-full shadow hover:bg-gray-100 transition">Sign in</button>
+            <button aria-label="Register" className="bg-black text-white px-4 py-1 rounded-full shadow hover:opacity-90 transition">Register</button>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -37,21 +37,21 @@ export default function App() {
             <a href="#features" className="block hover:text-black transition">Features</a>
             <a href="#about" className="block hover:text-black transition">Contact</a>
             <a href="#Explore" className="block hover:text-black transition">Explore</a>
-            <button className="block w-full text-left bg-white text-black px-4 py-1 rounded-full shadow hover:bg-gray-100 transition">Sign in</button>
-            <button className="block w-full text-left bg-black text-white px-4 py-1 rounded-full shadow hover:opacity-90 transition">Register</button>
+            <button aria-label="sign in" className="block w-full text-left bg-white text-black px-4 py-1 rounded-full shadow hover:bg-gray-100 transition">Sign in</button>
+            <button aria-label="Register" className="block w-full text-left bg-black text-white px-4 py-1 rounded-full shadow hover:opacity-90 transition">Register</button>
           </div>
         )}
       </section>
 
       {/* Hero Section */}
-      <section className="relative w-full h-[600px] sm:h-[850px] bg-[url('/picture/hero-image.jpg')] bg-cover bg-center bg-no-repeat">
+      <section className="relative w-full h-[600px] sm:h-[850px] bg-[url('/picture/hero-image.webp')] bg-cover bg-center bg-no-repeat">
         <div className="absolute inset-0 bg-[#D9B89C]/80 mix-blend-multiply z-10"></div>
         <div className="absolute inset-0 flex items-center justify-center z-40 px-4">
           <div className="text-center text-white">
             <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold drop-shadow-lg leading-snug">
               Step into Style <br /> Walk with ZURFRK
             </h2>
-            <button className="mt-6 px-6 py-3 bg-black text-white font-semibold rounded-full shadow-lg hover:opacity-90 transition">
+            <button aria-label="Shop Now" className="mt-6 px-6 py-3 bg-black text-white font-semibold rounded-full shadow-lg hover:opacity-90 transition">
               Shop now
             </button>
           </div>
@@ -98,7 +98,7 @@ export default function App() {
           <p className="text-lg mb-6 text-gray-100">Sign up for our newsletter</p>
           <form className="flex flex-col w-full max-w-md gap-3">
             <input type="email" placeholder="Enter your email" className="flex-1 px-4 py-2 rounded bg-white text-black placeholder-gray-500" />
-            <button type="submit" className="w-full px-6 py-2 bg-black text-white rounded">Subscribe</button>
+            <button aria-label="Subscribe" type="submit" className="w-full px-6 py-2 bg-black text-white rounded">Subscribe</button>
           </form>
         </div>
       </section>
