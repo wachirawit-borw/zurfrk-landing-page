@@ -1,79 +1,68 @@
-# ZURFRK – Men's Shoes Landing Page
+# 🏆 ZURFRK Portfolio Website
 
-> A professional landing page project for **ZURFRK**, a fictional men’s shoe brand.  
-> This project was created to demonstrate frontend development and design skills, using all knowledge I’ve learned in HTML5, CSS, TailwindCSS, JavaScript/TypeScript, and React.  
-> It is intended as a **portfolio piece** to showcase my ability to plan, design, and build a real-world responsive web interface.
-
----
-
-## 🔥 Brand Concept
-
-**ZURFRK** คือแบรนด์รองเท้าผู้ชายที่เน้นสไตล์เรียบหรู มั่นใจ และทันสมัย  
-Landing Page นี้ออกแบบขึ้นเพื่อ:
-
-- แนะนำแบรนด์ ZURFRK
-- แสดงจุดเด่นของสินค้า
-- แสดงตัวอย่างรองเท้า
+เว็บไซต์นี้คือ **เว็บสะสมผลงาน (Portfolio)** ของผู้ใช้งานแบรนด์ **wachirawit borwonsuk**  
+นำเสนอทั้งดีไซน์ ความสามารถ และตัวอย่างงานผ่านหน้า Landing Page สุดทันสมัย
 
 ---
 
-## 🧠 Objectives
+## 🎯 วัตถุประสงค์
 
-- ใช้ทุกความรู้ด้าน Frontend ที่มีในการสร้างโปรเจกต์เดียว
-- วางแผน UI/UX ตั้งแต่ Wireframe → High-fidelity
-- สร้าง Component-based layout ด้วย React + TypeScript
-- รองรับ Responsive อย่างเต็มรูปแบบ (มือถือ–Desktop)
-- สื่อสารแบรนด์ผ่านภาพ, layout และ animation
+- นำเสนอแบรนด์ ZURFRK ด้วยภาพลักษณ์ที่เรียบหรู ทันสมัย
+- ทดลองและแสดงความเข้าใจในเครื่องมือ Frontend ที่เรียนรู้มา
+- สร้าง Landing Page ที่ใช้งานได้จริง พร้อม responsive และ SEO friendly
 
 ---
 
-## 🔧 Project Plan (แผนการทำงานแบบ “ใช้ทุกอย่างที่รู้”)
+## 🛠️ เทคโนโลยีที่ใช้
 
-| ขั้น | ทำอะไร                              | ความรู้ที่ใช้                   |
-| ---- | ----------------------------------- | ------------------------------- |
-| 1    | วาง Wireframe มือถือก่อน            | UX / Layout thinking            |
-| 2    | ออกแบบ UI ด้วย Figma                | UI Design / Branding            |
-| 3    | Setup React + Vite + Tailwind       | React, CLI, Tailwind config     |
-| 4    | สร้าง Layout และ Section            | HTML5, Tailwind, Semantic Tags  |
-| 5    | แยก UI เป็น Components              | React, Props                    |
-| 6    | ใช้ JSON mock data + map loop       | JS/TS, data to UI               |
-| 7    | ใส่ TypeScript                      | Props typing, product interface |
-| 8    | ใส่ animation (เช่น fade/slide)     | Framer Motion, UX               |
-| 9    | ตรวจ responsive, SEO, a11y          | HTML5 semantic, dev tools       |
-| 10   | Deploy ขึ้น Netlify                 | Hosting skill                   |
+| เทคโนโลยี | รายละเอียด |
+|-----------|-------------|
+| **React** | สร้าง UI ที่ประกอบด้วย Component แบบ reusable |
+| **TypeScript** | เพิ่มความปลอดภัยด้านชนิดข้อมูล พร้อมตรวจจับ error ตั้งแต่ compile time |
+| **Next.js (App Router)** | จัดการ routing, static optimization และ performance |
+| **Tailwind CSS** | จัดการ layout และ design แบบ utility-first |
+| **HTML5 + CSS3** | โครงสร้างพื้นฐานของหน้าเว็บ |
+| **Video Fallback Logic** | ใช้วิดีโอเป็น background และ fallback เป็นรูปภาพเมื่อเล่นไม่ได้ |
+| **Responsive Design** | รองรับการแสดงผลทุกขนาดหน้าจอ |
+| **Lighthouse Optimization** | พัฒนาโดยคำนึงถึง SEO, accessibility และ performance |
 
 ---
 
-## 🚀 Tech Stack
+## 🎬 ฟีเจอร์เด่น
 
-- **React** + **TypeScript**
-- **TailwindCSS**
-- **Vite**
-- **Figma** (Design)
-- **Framer Motion** (Animation)
-- **Netlify** (Deployment)
-
----
-
-## 🧩 Features
-
-- Mobile-first responsive design
-- Component-based UI
-- Clean, modern layout with branding in mind
-- Smooth animation and scroll experience
-- Lighthouse & a11y focused
-- Easy to extend into a full e-commerce website
+- **พื้นหลังแบบวิดีโอ + รูป fallback**
+  - วิดีโอแสดงเป็นพื้นหลังในหน้า Hero section
+  - ถ้า browser ไม่รองรับ video หรือช้า → แสดงรูปภาพแทนอัตโนมัติ
+- **Component แยกชัดเจน**
+  - เช่น `ImageBox`, `Feature`, `FooterBlock`, `FooterList`
+- **เมนู Navigation ทั้ง desktop และ mobile**
+  - มี dropdown สำหรับ mobile พร้อม toggle ได้ด้วย `useState`
+- **SEO-Friendly**
+  - ใช้ `alt` อย่างถูกต้องใน `<Image>`
+  - ใช้ semantic HTML (`<section>`, `<header>`, `<footer>`)
 
 ---
 
-## 🌍 Live Demo
+## 📱 Responsive ครอบคลุม
 
-🔗 https://zurfrk.netlify.app _(to be added after deployment)_
+- Mobile (≤ 640px)
+- Tablet (≥ 768px)
+- Desktop (≥ 1024px)
+- ใช้ Tailwind breakpoint เช่น `sm:`, `md:`, `lg:`
 
 ---
 
-## 🙋‍♂️ Author
+## 📌 หมายเหตุ
 
-Wachirawit Borw  
-📫 wachirawit.borw@gmail.com  
-GitHub: [@wachirawit-borw](https://github.com/wachirawit-borw/zurfrk-landing-page)
+- วิดีโอ `.webm` จะถูก preload ด้วย `<video preload="auto" />`  
+- การ fallback เป็น `<Image>` จะใช้ `useEffect` เพื่อตรวจสอบความสามารถของเบราว์เซอร์
+
+---
+
+## 👨‍🎓 ผู้พัฒนา
+
+**ZURFRK**  
+Fullstack Frontend  
+โปรเจกต์จริงเพื่อฝึก React + Next.js + Tailwind
+
+---
