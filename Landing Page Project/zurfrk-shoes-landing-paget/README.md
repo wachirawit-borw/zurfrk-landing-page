@@ -1,40 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# 🏆 ZURFRK Portfolio Website
 
-## Getting Started
+เว็บไซต์นี้คือ **เว็บสะสมผลงาน (Portfolio)** ของผู้ใช้งานแบรนด์ **wachirawit borwonsuk**  
+นำเสนอทั้งดีไซน์ ความสามารถ และตัวอย่างงานผ่านหน้า Landing Page สุดทันสมัย
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🎯 วัตถุประสงค์
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- นำเสนอแบรนด์ ZURFRK ด้วยภาพลักษณ์ที่เรียบหรู ทันสมัย
+- ทดลองและแสดงความเข้าใจในเครื่องมือ Frontend ที่เรียนรู้มา
+- สร้าง Landing Page ที่ใช้งานได้จริง พร้อม responsive และ SEO friendly
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+---
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## 🛠️ เทคโนโลยีที่ใช้
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+| เทคโนโลยี | รายละเอียด |
+|-----------|-------------|
+| **React** | สร้าง UI ที่ประกอบด้วย Component แบบ reusable |
+| **TypeScript** | เพิ่มความปลอดภัยด้านชนิดข้อมูล พร้อมตรวจจับ error ตั้งแต่ compile time |
+| **Next.js (App Router)** | จัดการ routing, static optimization และ performance |
+| **Tailwind CSS** | จัดการ layout และ design แบบ utility-first |
+| **HTML5 + CSS3** | โครงสร้างพื้นฐานของหน้าเว็บ |
+| **Video Fallback Logic** | ใช้วิดีโอเป็น background และ fallback เป็นรูปภาพเมื่อเล่นไม่ได้ |
+| **Responsive Design** | รองรับการแสดงผลทุกขนาดหน้าจอ |
+| **Lighthouse Optimization** | พัฒนาโดยคำนึงถึง SEO, accessibility และ performance |
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🎬 ฟีเจอร์เด่น
 
-To learn more about Next.js, take a look at the following resources:
+- **พื้นหลังแบบวิดีโอ + รูป fallback**
+  - วิดีโอแสดงเป็นพื้นหลังในหน้า Hero section
+  - ถ้า browser ไม่รองรับ video หรือช้า → แสดงรูปภาพแทนอัตโนมัติ
+- **Component แยกชัดเจน**
+  - เช่น `ImageBox`, `Feature`, `FooterBlock`, `FooterList`
+- **เมนู Navigation ทั้ง desktop และ mobile**
+  - มี dropdown สำหรับ mobile พร้อม toggle ได้ด้วย `useState`
+- **SEO-Friendly**
+  - ใช้ `alt` อย่างถูกต้องใน `<Image>`
+  - ใช้ semantic HTML (`<section>`, `<header>`, `<footer>`)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📱 Responsive ครอบคลุม
 
-## Deploy on Vercel
+- Mobile (≤ 640px)
+- Tablet (≥ 768px)
+- Desktop (≥ 1024px)
+- ใช้ Tailwind breakpoint เช่น `sm:`, `md:`, `lg:`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+## 📌 หมายเหตุ
+
+- วิดีโอ `.webm` จะถูก preload ด้วย `<video preload="auto" />`  
+- การ fallback เป็น `<Image>` จะใช้ `useEffect` เพื่อตรวจสอบความสามารถของเบราว์เซอร์
+
+---
+
+## 👨‍🎓 ผู้พัฒนา
+
+**ZURFRK**  
+Fullstack Frontend  
+โปรเจกต์จริงเพื่อฝึก React + Next.js + Tailwind
+
+---
