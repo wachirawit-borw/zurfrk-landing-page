@@ -3,16 +3,36 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
 
 /* ───────────────────────── Main Page ───────────────────────── */
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [canPlayVideo, setCanPlayVideo] = useState(false); // ✅ ตรวจ video support
+  const [canPlayVideo, setCanPlayVideo] = useState(false); //
+  const [showButton, setShowButton] = useState(false);
+
+  const shoes = [
+    { src: "/picture/shoes-image1.webp", alt: "Shoe 1" },
+    { src: "/picture/shoes-image2.webp", alt: "Shoe 2" },
+    { src: "/picture/shoes-image3.webp", alt: "Shoe 3" },
+    { src: "/picture/shoes-image5.webp", alt: "Shoe 5" },
+    { src: "/picture/shoes-image6.webp", alt: "Shoe 6" },
+  ];
 
   useEffect(() => {
     const vid = document.createElement("video");
     const support = vid.canPlayType("video/webm");
     if (support === "probably" || support === "maybe") setCanPlayVideo(true);
+  }, []);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setShowButton(true);
+    }, 1500); // โผล่หลัง 1 วิ
+    return () => clearTimeout(timeout);
   }, []);
 
   return (
@@ -119,10 +139,13 @@ export default function Home() {
             Step into Style <br /> Walk with ZURFRK
           </h2>
 
-          {/* ให้ปุ่มอยู่ใต้ข้อความเป็นแถวเดียวตรงกลาง */}
+          {/* ปุ่ม Shop now ที่โผล่แบบมี delay */}
           <button
-            aria-label="Shop now"
-            className="mt-8 px-6 py-3 bg-black text-white font-semibold rounded-full shadow-lg hover:opacity-90 transition"
+            className={`
+              mt-6 px-6 py-2 rounded-full bg-[#686666] text-white font-medium
+              transition-all duration-700 ease-out
+              ${showButton ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"}
+            `}
           >
             Shop now
           </button>
@@ -141,9 +164,27 @@ export default function Home() {
 
       {/* ───────────────── Image Showcase ───────────────── */}
       <section className="bg-[#edc6a1] py-16">
-        <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8">
-          <ImageBox src="/picture/shoes-image1.jpg" alt="Shoe 1" />
-          <ImageBox src="/picture/shoes-image2.jpg" alt="Shoe 2" />
+        <div className="max-w-6xl mx-auto px-4">
+          <Swiper
+            modules={[Navigation, Autoplay]} // ✅ เพิ่ม Autoplay เข้าไปด้วย
+            autoplay={{
+              delay: 3000,                // ✅ ทุก 3 วิ
+              disableOnInteraction: false // ✅ ยังคงเลื่อนต่อแม้ user จะแตะ
+            }}
+            navigation
+            spaceBetween={24}
+            slidesPerView={1.2}
+            breakpoints={{
+              768: { slidesPerView: 2 },
+              1024: { slidesPerView: 3 },
+            }}
+          >
+            {shoes.map((item, index) => (
+              <SwiperSlide key={index}>
+                <ImageBox src={item.src} alt={item.alt} />
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
       </section>
 
@@ -155,13 +196,13 @@ export default function Home() {
             <h3 className="text-lg font-bold">ZURFRK</h3>
             <p className="text-sm">
               ZURFRK is a premium men’s footwear brand born from the pursuit of timeless simplicity.
-              We design with presence — clean lines, elegant curves and comfort you forget you’re wearing.
+              We design with presence clean lines, elegant curves and comfort you forget you’re wearing.
             </p>
             <p className="text-sm">
               Each pair is crafted for the man who doesn’t follow trends. He sets them.
             </p>
           </div>
-          <ImageBox src="/picture/about-image.jpg" alt="About ZURFRK" />
+          <ImageBox src="/picture/about-image.webp" alt="About ZURFRK" />
         </div>
       </section>
 
@@ -171,7 +212,7 @@ export default function Home() {
         className="relative w-full h-[500px] bg-black overflow-hidden flex items-center justify-center text-white"
       >
         <Image
-          src="/picture/subscribe.jpg"
+          src="/picture/subscribe.webp"
           alt="Subscribe background"
           fill
           className="object-cover z-0"
