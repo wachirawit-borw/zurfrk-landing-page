@@ -7,15 +7,18 @@
   font-weight: 400;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;  /* ปรับความคมของตัวอักษรสำหรับ Mac/iOS */
-  -moz-osx-font-smoothing: grayscale;   /* ปรับความคมของตัวอักษรสำหรับ Firefox/Mac */
+  -webkit-font-smoothing: antialiased;
+  /* ปรับความคมของตัวอักษรสำหรับ Mac/iOS */
+  -moz-osx-font-smoothing: grayscale;
+  /* ปรับความคมของตัวอักษรสำหรับ Firefox/Mac */
 }
 
 /* ───── 🌐 Reset body ───── */
 body {
   margin: 0;
   padding: 0;
-  overflow-x: hidden; /* ป้องกันการเลื่อนแนวนอน (เช่นจาก navbar ล้นจอ) */
+  overflow-x: hidden;
+  /* ป้องกันการเลื่อนแนวนอน (เช่นจาก navbar ล้นจอ) */
 }
 
 /* ───── 🔗 Link style (ใช้แค่ transition และ hover stroke) ───── */
@@ -27,7 +30,8 @@ a {
 }
 
 a:hover {
-  color: #4465c1; /* Hover เป็นน้ำเงินกรม */
+  color: #4465c1;
+  /* Hover เป็นน้ำเงินกรม */
 }
 
 /* ───── 🖱️ Button (กรณีใช้ tag <button> ตรง ๆ ไม่ใช้ className) ───── */
@@ -40,21 +44,27 @@ button {
 /* แนะนำ: ปุ่มควรใช้ Tailwind แทน เช่น className="rounded-lg px-4 py-2 bg-black text-white" */
 
 /* ───── 🖥️ Typography: header ───── */
-h1, h2, h3 {
-  letter-spacing: -0.02em; /* ทำให้ตัวอักษรแน่นขึ้นนิดนึง ดู modern */
+h1,
+h2,
+h3 {
+  letter-spacing: -0.02em;
+  /* ทำให้ตัวอักษรแน่นขึ้นนิดนึง ดู modern */
   line-height: 1.2;
 }
 
 /* ───── 🖼️ รูปภาพ ───── */
 img {
-  border-radius: 0.5rem; /* ทำให้รูปดูนุ่มนวล */
-  object-fit: cover;     /* ให้รูปเต็มกรอบไม่บิด */
+  border-radius: 0.5rem;
+  /* ทำให้รูปดูนุ่มนวล */
+  object-fit: cover;
+  /* ให้รูปเต็มกรอบไม่บิด */
 }
 
 /* ───── 🌞 Light mode override ───── */
 @media (prefers-color-scheme: light) {
   :root {
-    color: #1f2937; /* text-gray-800 */
+    color: #1f2937;
+    /* text-gray-800 */
     background-color: #ffffff;
   }
 
@@ -62,7 +72,6 @@ img {
     color: #1e3a8a;
   }
 }
-
 
 #root {
   max-width: 1280px;
@@ -77,9 +86,11 @@ img {
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
@@ -88,6 +99,7 @@ img {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -107,4 +119,26 @@ img {
   color: #888;
 }
 
+/* ปรับความเด่นของภาพตรงกลางใน Swiper */
+/* กำหนดสไตล์เริ่มต้นให้กับ SwiperSlide ทั้งหมด */
+.swiper-slide {
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  transform: scale(0.85);
+  /* ย่อขนาดสไลด์ปกติลง 15% */
+  opacity: 0.6;
+  /* ลดความสว่างลงเล็กน้อย */
+}
 
+/* กำหนดสไตล์เมื่อ SwiperSlide อยู่ตรงกลาง (active) */
+.swiper-slide.swiper-slide-active {
+  transform: scale(1);
+  /* คืนขนาดเป็น 100% */
+  opacity: 1;
+  /* ทำให้สว่างเต็มที่ */
+}
+
+/* (แนะนำ) เพิ่มพื้นที่ด้านข้างเพื่อให้สไลด์ที่ขยายใหญ่ขึ้นไม่ถูกตัด */
+.swiper-container-horizontal {
+  padding-left: 16px;
+  padding-right: 16px;
+}
