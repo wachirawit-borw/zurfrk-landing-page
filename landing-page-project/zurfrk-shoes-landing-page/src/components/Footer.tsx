@@ -28,7 +28,7 @@ export default function Footer() {
     return (
         <>
             <section id="explore">
-                <footer className="bg-[#D9B89C] text-black px-4 sm:px-6 py-16">
+                <footer className="bg-gradient-to-r from-[#f2d3b6] to-[#4e73a4] text-black px-4 sm:px-6 py-16">
                     <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
                         <FooterBlock title="ZURFRK">
                             <div className="flex gap-4 text-black text-xl">

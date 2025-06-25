@@ -1,8 +1,6 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Autoplay } from "swiper/modules";
+import { Navigation, Autoplay, EffectCoverflow } from "swiper/modules";
 import Image from "next/image";
-
-// Import CSS ของ Swiper
 import "swiper/css";
 import "swiper/css/navigation";
 
@@ -18,46 +16,45 @@ export default function Product() {
 
   return (
     <>
-      <section className="bg-[#ebc8a8] py-16">
-        {/* ไม่จำเป็นต้องใช้ div ครอบอีกชั้นก็ได้ แต่ถ้ามีก็ไม่เป็นไร */}
+      {/* เพิ่ม gradient background หรือสีพื้นหลังที่ต้องการ */}
+      <section className="bg-gradient-to-r from-[#f2d3b6] to-[#4e73a4] py-16">
         <Swiper
-          // เพิ่ม className นี้เพื่อช่วยเรื่องการจัดระยะห่าง
-          className="swiper-container-horizontal" 
-          modules={[Navigation, Autoplay]}
+          // 1. เพิ่ม EffectCoverflow เข้าไปใน modules
+          modules={[Navigation, Autoplay, EffectCoverflow]}
+
+          // 2. กำหนด effect เป็น 'coverflow'
+          effect={"coverflow"}
+
+          // 3. ตั้งค่าสำหรับ Coverflow Effect โดยเฉพาะ
+          coverflowEffect={{
+            rotate: 20,       // การเอียงของสไลด์ด้านข้าง
+            stretch: 0,       // ระยะห่างระหว่างสไลด์ (0 คือชิดกัน)
+            depth: 100,       // ความลึก (ยิ่งเยอะยิ่งดูไกล)
+            modifier: 1,      // ตัวคูณเอฟเฟกต์ (1 คือค่าปกติ)
+            slideShadows: true, // แสดงเงาใต้สไลด์เพื่อเพิ่มมิติ
+          }}
+
+          loop={true}
+          centeredSlides={true}
+          slidesPerView={"auto"} // ตั้งเป็น 'auto' เพื่อให้ขนาดพอดี
           navigation
-          loop
-          centeredSlides
           autoplay={{
             delay: 3000,
             disableOnInteraction: false,
           }}
-          spaceBetween={10} // อาจจะลด spaceBetween ลงเล็กน้อย
-          slidesPerView={1.2} // ปรับให้เห็นสไลด์ด้านข้างมากขึ้นบนมือถือ
-          breakpoints={{
-            // เมื่อหน้าจอกว้าง 768px ขึ้นไป
-            768: {
-              slidesPerView: 3,
-              spaceBetween: 20,
-            },
-            // เมื่อหน้าจอกว้าง 1024px ขึ้นไป
-            1024: {
-              slidesPerView: 3,
-              spaceBetween: 24,
-            },
-          }}
+          className="mySwiper" // อาจจะตั้งชื่อ class ไว้เผื่อแต่งสไตล์เพิ่มเติม
         >
           {shoes.map((item, index) => (
-            <SwiperSlide key={index}>
-              <div className="aspect-square overflow-hidden rounded-xl">
+            // กำหนดขนาดของ SwiperSlide ให้ชัดเจน
+            <SwiperSlide key={index} style={{ width: '300px', height: '400px' }}>
+              <div className="relative h-full w-full rounded-xl overflow-hidden shadow-lg">
                 <Image
                   src={item.src}
                   alt={item.alt}
-                  width={400}
-                  height={400}
-                  // แก้ไข className เพื่อให้มั่นใจว่ารูปภาพมีขนาดเท่ากันเสมอ
-                  className="h-full w-full object-cover"
-                  sizes="(max-width: 768px) 80vw, (max-width: 1024px) 50vw, 33vw"
+                  fill // ใช้ fill="true" เพื่อให้ภาพเต็ม container
+                  className="object-cover"
                 />
+                {/* คุณสามารถเพิ่ม Text หรือปุ่มต่างๆ บนรูปได้ที่นี่ */}
               </div>
             </SwiperSlide>
           ))}

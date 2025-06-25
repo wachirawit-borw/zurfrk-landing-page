@@ -118,27 +118,3 @@ img {
 .read-the-docs {
   color: #888;
 }
-
-/* ปรับความเด่นของภาพตรงกลางใน Swiper */
-/* กำหนดสไตล์เริ่มต้นให้กับ SwiperSlide ทั้งหมด */
-.swiper-slide {
-  transition: transform 0.4s ease, opacity 0.4s ease;
-  transform: scale(0.85);
-  /* ย่อขนาดสไลด์ปกติลง 15% */
-  opacity: 0.6;
-  /* ลดความสว่างลงเล็กน้อย */
-}
-
-/* กำหนดสไตล์เมื่อ SwiperSlide อยู่ตรงกลาง (active) */
-.swiper-slide.swiper-slide-active {
-  transform: scale(1);
-  /* คืนขนาดเป็น 100% */
-  opacity: 1;
-  /* ทำให้สว่างเต็มที่ */
-}
-
-/* (แนะนำ) เพิ่มพื้นที่ด้านข้างเพื่อให้สไลด์ที่ขยายใหญ่ขึ้นไม่ถูกตัด */
-.swiper-container-horizontal {
-  padding-left: 16px;
-  padding-right: 16px;
-}
