@@ -14,7 +14,7 @@ export default function Features() {
 
     return (
         <>
-            <section id="features" className="bg-gradient-to-r from-[#f2d3b6] to-[#4e73a4] py-20 px-6 text-black text-center">
+            <section id="features" className="bg-gradient-to-r from-[#f0cca8] to-[#ccdef5] py-20 px-6 text-black text-center">
                 <h2 className="text-3xl font-bold mb-12 tracking-tight drop-shadow-sm">Features</h2>
                 <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 justify-items-center">
                     <Feature icon="🪶" title="Lightweight" text="Walk freely all day with ultra-light cushioning." />

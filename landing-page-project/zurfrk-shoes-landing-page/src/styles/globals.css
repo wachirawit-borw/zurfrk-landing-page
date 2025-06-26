@@ -118,3 +118,113 @@ img {
 .read-the-docs {
   color: #888;
 }
+
+.button-shop {
+  --width: 100px;
+  --height: 35px;
+  --tooltip-height: 35px;
+  --tooltip-width: 90px;
+  --gap-between-tooltip-to-button: 18px;
+  --button-color: #9c1212;
+  --button-radius: 100px;
+  width: var(--width);
+  height: var(--height);
+  background: var(--button-color);
+  position: relative;
+  text-align: center;
+  border: 2px solid #fffdfd;
+  border-radius: var(--button-radius);
+  font-family: "Arial";
+  transition: background 0.3s;
+  overflow: hidden;
+}
+
+.button-shop::before {
+  position: absolute;
+  content: attr(data-tooltip);
+  width: var(--tooltip-width);
+  height: var(--tooltip-height);
+  background-color: #555;
+  font-size: 0.9rem;
+  color: #fff;
+  border-radius: .25em;
+  line-height: var(--tooltip-height);
+  bottom: calc(var(--height) + var(--gap-between-tooltip-to-button) + 10px);
+  left: calc(50% - var(--tooltip-width) / 2);
+}
+
+.button-shop::after {
+  position: absolute;
+  content: '';
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+  border-top-color: #555;
+  left: calc(50% - 10px);
+  bottom: calc(100% + var(--gap-between-tooltip-to-button) - 10px);
+}
+
+.button-shop::after,
+.button-shop::before {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s;
+}
+
+.button-shop__wrapper,
+.button-shop__text,
+.button-shop__icon {
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  color: #fff;
+}
+
+.button-shop__text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  transition: top 0.5s;
+}
+
+.button-shop__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 100%;
+  transition: top 0.5s;
+}
+
+.button-shop__icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.button-shop:hover {
+  background: #222;
+}
+
+.button-shop:hover .button-shop__text {
+  top: -100%;
+}
+
+.button-shop:hover .button-shop__icon {
+  top: 0;
+}
+
+.button-shop:hover::before,
+.button-shop:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+.button-shop:hover::after {
+  bottom: calc(var(--height) + var(--gap-between-tooltip-to-button) - 20px);
+}
+
+.button-shop:hover::before {
+  bottom: calc(var(--height) + var(--gap-between-tooltip-to-button));
+}

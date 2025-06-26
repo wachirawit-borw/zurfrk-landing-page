@@ -17,7 +17,7 @@ export default function Product() {
   return (
     <>
       {/* เพิ่ม gradient background หรือสีพื้นหลังที่ต้องการ */}
-      <section className="bg-gradient-to-r from-[#f2d3b6] to-[#4e73a4] py-16">
+      <section className="bg-gradient-to-r from-[#f0cca8] to-[#ccdef5] py-16">
         <Swiper
           // 1. เพิ่ม EffectCoverflow เข้าไปใน modules
           modules={[Navigation, Autoplay, EffectCoverflow]}
