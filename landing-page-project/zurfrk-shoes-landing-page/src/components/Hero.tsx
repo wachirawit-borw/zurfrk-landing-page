@@ -18,7 +18,7 @@ export default function Hero() {
     useEffect(() => {
         const timeout = setTimeout(() => {
             setShowButton(true);
-        }, 1500); // โผล่หลัง 1 วิ
+        }, 1500); // โผล่หลัง 1.5 วิ
         return () => clearTimeout(timeout);
     }, []);
 

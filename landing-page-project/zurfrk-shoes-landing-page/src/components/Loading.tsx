@@ -1,11 +1,8 @@
-// สร้างไฟล์ใหม่ที่: components/Loading.tsx
-
 export default function LoadingSpinner() {
   return (
-    // section นี้เพื่อให้มีพื้นหลังและจัดกลางเหมือนของเดิม
+
     <section className="flex flex-col justify-center items-center h-96 bg-gradient-to-r from-[#f0cca8] to-[#ccdef5] py-16 text-center">
       <div className="flex items-center justify-center space-x-3">
-        {/* นี่คือตัว Spinner ที่หมุนได้ */}
         <svg
           className="animate-spin h-8 w-8 text-gray-800"
           xmlns="http://www.w3.org/2000/svg"
