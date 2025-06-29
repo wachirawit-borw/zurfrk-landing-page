@@ -1,16 +1,13 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Link from "next/link";
-import type { FC } from "react"; // Import FC (Functional Component) type
+import type { FC, MouseEvent } from "react";
 
-// สร้าง Type ขึ้นมาสำหรับ Link แต่ละอัน
 type NavLink = {
     href: string;
     label: string;
 };
 
-// ไอคอน (เหมือนเดิม)
 const MenuIcon: FC = () => (
     <svg className="w-6 h-6 text-gray-200" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
@@ -27,8 +24,8 @@ export default function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
     const [activeSection, setActiveSection] = useState('');
 
-    // 1. กำหนด Type ให้กับ Array ของลิงก์
     const navLinks: NavLink[] = [
+        // FIX 1: แก้ href ให้ตรงกับ id ของ header
         { href: "#header", label: "Home" },
         { href: "#features", label: "Features" },
         { href: "#about", label: "About" },
@@ -36,7 +33,7 @@ export default function Header() {
     ];
 
     useEffect(() => {
-        const sections = document.querySelectorAll('section[id]');
+        const sections = document.querySelectorAll('section[id], header[id]');
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -48,34 +45,56 @@ export default function Header() {
         return () => sections.forEach(section => observer.unobserve(section));
     }, []);
 
-    const handleLinkClick = () => {
-        setMenuOpen(false);
+    // FIX 2: อัปเดตฟังก์ชันให้จัดการปุ่ม Home เป็นกรณีพิเศษ
+    const handleSmoothScroll = (e: MouseEvent<HTMLAnchorElement>) => {
+        const href = e.currentTarget.getAttribute('href');
+        if (!href || !href.startsWith('#')) return;
+
+        // จัดการลิงก์ #header ให้ "เด้ง" ไปบนสุดทันที
+        if (href === "#header") {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'auto'
+            });
+            return;
+        }
+
+        // สำหรับลิงก์อื่นๆ ให้เลื่อนแบบนุ่มนวลและซ่อน # จาก URL
+        e.preventDefault();
+        const targetId = href.substring(1);
+        const targetElement = document.getElementById(targetId);
+
+        if (targetElement) {
+            targetElement.scrollIntoView({ behavior: 'smooth' });
+        }
     };
 
     return (
         <>
             <header
-                id="header"
+                id="header" // ID นี้ต้องตรงกับ href ของลิงก์ Home
                 className="w-full px-4 sm:px-6 py-4 flex justify-between items-center bg-[#b60b0b] shadow-md sticky top-0 z-50"
             >
-                <Link href="#header" onClick={handleLinkClick} className="text-3xl font-extrabold text-[#dadbdb] drop-shadow-sm tracking-wide">
+                <a href="#header" onClick={handleSmoothScroll} className="text-3xl font-extrabold text-[#dadbdb] drop-shadow-sm tracking-wide">
                     ZURFRK
-                </Link>
+                </a>
 
                 {/* Desktop Navigation */}
                 <nav className="hidden md:flex items-center gap-6 font-extrabold drop-shadow-sm tracking-wide text-gray-200">
                     {navLinks.map((link) => (
-                        <Link 
+                        <a 
                             key={link.href} 
                             href={link.href} 
-                            // 2. ใส่ตรรกะแบบ Inline ตรงนี้
+                            onClick={handleSmoothScroll}
                             aria-current={activeSection === link.href.substring(1) ? 'page' : undefined}
+                            className="hover:text-yellow-300 transition-colors"
                         >
                             {link.label}
-                        </Link>
+                        </a>
                     ))}
                 </nav>
-
+                
                 {/* Mobile Menu Button */}
                 <button
                     aria-label="Toggle mobile navigation menu"
@@ -93,16 +112,18 @@ export default function Header() {
                     className="md:hidden bg-[#e5c4a5] px-4 py-3 space-y-2 text-gray-800 text-sm font-medium shadow-inner fixed top-0 left-0 w-full pt-20"
                 >
                     {navLinks.map((link) => (
-                        <Link
+                        <a
                             key={link.href}
                             href={link.href}
                             className="block py-2"
-                            onClick={handleLinkClick}
-                            // 3. ใส่ตรรกะแบบ Inline ตรงนี้เช่นกัน
+                            onClick={(e) => {
+                                handleSmoothScroll(e);
+                                setMenuOpen(false);
+                            }}
                             aria-current={activeSection === link.href.substring(1) ? 'page' : undefined}
                         >
                             {link.label}
-                        </Link>
+                        </a>
                     ))}
                 </div>
             )}
