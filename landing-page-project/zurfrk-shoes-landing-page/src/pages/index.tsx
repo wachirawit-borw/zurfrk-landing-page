@@ -4,16 +4,7 @@ import Features from "@/components/Features";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
 import dynamic from "next/dynamic";
 
-const DynamicProduct = dynamic(() => import('@/components/Product'), {
-  loading: () => (
-    <div className="flex justify-center items-center h-96 text-xl">
-      Loading products...
-    </div>
-  ),
-
-  ssr: false,
-});
-
+const DynamicProduct = dynamic(() => import('@/components/Product'));
 const DynamicContact = dynamic(() => import('@/components/Contact'));
 const DynamicProductDetail = dynamic(() => import('@/components/WhyChooseUs'));
 const DynamicFaq = dynamic(() => import('@/components/Faq'));
