@@ -1,16 +1,18 @@
+"use client";
 import { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay, EffectCoverflow } from "swiper/modules";
 import Image from "next/image";
-import LoadingSpinner from "@/components/Loading"
+import Link from "next/link";
+import LoadingSpinner from "@/components/Loading";
 import "swiper/css";
-import "swiper/css/navigation";
+import "swiper/css/effect-coverflow";
 
 type Product = {
   id: number;
   name: string;
   imageUrl: string;
-  price?: number;
+  price: number;
 };
 
 export default function Product() {
@@ -18,24 +20,19 @@ export default function Product() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-
     const fetchProducts = async () => {
       try {
-
         const response = await fetch("/api/products");
-
         const data = await response.json();
-
+        // ระบุ Type ของ a และ b เป็น Product ทำให้มันเรียงจากเลข ID
+        data.sort((a: Product, b: Product) => a.id - b.id);
         setProducts(data);
       } catch (error) {
-
         console.error("Failed to fetch products:", error);
       } finally {
-
         setLoading(false);
       }
     };
-
     fetchProducts();
   }, []);
 
@@ -44,49 +41,46 @@ export default function Product() {
   }
 
   return (
-    <>
-      <section className="bg-gradient-to-r from-[#f0cca8] to-[#ccdef5] py-16">
-        <Swiper
-          modules={[Navigation, Autoplay, EffectCoverflow]}
-          effect={"coverflow"}
-          coverflowEffect={{
-            rotate: 30,
-            stretch: 3,
-            depth: 100,
-            modifier: 1,
-            slideShadows: true,
-          }}
-          loop={true}
-          centeredSlides={true}
-          slidesPerView={"auto"}
-          navigation
-          autoplay={{
-            delay: 3000,
-            disableOnInteraction: false,
-          }}
-          className="mySwiper"
-        >
-          {products.map((product) => (
-
-            <SwiperSlide key={product.id} style={{ width: '300px', height: '400px' }}>
-              <div className="relative h-full w-full rounded-xl overflow-hidden shadow-lg">
-                <Image
-
-                  src={product.imageUrl}
-                  alt={product.name}
-                  fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  className="object-cover"
-
-                  onError={(e) => {
-                    e.currentTarget.src = 'https://placehold.co/300x400/f0cca8/ccdef5?text=Image+Error';
-                  }}
-                />
+    <section className="bg-gradient-to-r from-[#f0cca8] to-[#ccdef5] py-16">
+      <h2 className="text-3xl font-bold mb-12 tracking-tight drop-shadow-sm text-center">Products</h2>
+      <Swiper
+        modules={[Navigation, Autoplay, EffectCoverflow]}
+        effect={"coverflow"}
+        coverflowEffect={{
+          rotate: 30,
+          stretch: 0,
+          depth: 100,
+          modifier: 1,
+          slideShadows: true,
+        }}
+        loop={true}
+        centeredSlides={true}
+        slidesPerView={"auto"}
+        autoplay={{
+          delay: 3000,
+          disableOnInteraction: false,
+        }}
+        className="mySwiper"
+      >
+        {products.map((product) => (
+          <SwiperSlide key={product.id} style={{ width: '350px', height: '450px' }}>
+            <Link href={`/product/${product.id}`} className="group block h-full w-full relative rounded-xl overflow-hidden shadow-lg">
+              <Image
+                src={product.imageUrl}
+                alt={product.name}
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                className="object-cover transition-transform duration-300 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+              <div className="absolute bottom-0 left-0 p-4 text-white">
+                <h3 className="text-xl font-bold">{product.name}</h3>
+                <p className="text-lg mt-1">฿{product.price.toLocaleString()}</p>
               </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </section>
-    </>
+            </Link>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </section>
   );
 }

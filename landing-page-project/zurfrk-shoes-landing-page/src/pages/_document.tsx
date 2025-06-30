@@ -17,7 +17,7 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
-          <title>ZURFRK Step into Bold</title>
+          <title>ZURFRK | Portfolio| Wachirawit</title>
           <meta
             name="description"
             content="Premium men's shoes designed for timeless style and everyday comfort. Shop with ZURFRK."
