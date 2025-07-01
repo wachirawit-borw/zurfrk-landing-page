@@ -23,10 +23,16 @@ export default function Product() {
     const fetchProducts = async () => {
       try {
         const response = await fetch("/api/products");
-        const data = await response.json();
-        // ระบุ Type ของ a และ b เป็น Product ทำให้มันเรียงจากเลข ID
-        data.sort((a: Product, b: Product) => a.id - b.id);
-        setProducts(data);
+        const json = await response.json();
+
+        if ("error" in json) {
+          console.error("❌ API returned error:", json.error);
+        } else if (Array.isArray(json)) {
+          json.sort((a: Product, b: Product) => a.id - b.id);
+          setProducts(json);
+        } else {
+          console.error("⚠️ Unexpected API format:", json);
+        }
       } catch (error) {
         console.error("Failed to fetch products:", error);
       } finally {
